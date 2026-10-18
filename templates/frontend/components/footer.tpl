@@ -103,6 +103,15 @@
 		</div>
 
 		<footer class="ah-pdf-modal__toolbar">
+			<button type="button" class="ah-pdf-modal__btn ah-pdf-modal__btn--icon" id="ahPdfZoomOut" aria-label="Zoom out" title="Zoom out">
+				<span aria-hidden="true">−</span>
+			</button>
+			<button type="button" class="ah-pdf-modal__btn ah-pdf-modal__btn--icon" id="ahPdfZoomIn" aria-label="Zoom in" title="Zoom in">
+				<span aria-hidden="true">+</span>
+			</button>
+			<button type="button" class="ah-pdf-modal__btn" id="ahPdfViewMode" aria-label="Toggle 1 or 2 pages" title="1 / 2 pages">
+				<span id="ahPdfViewModeLabel">1 hlm</span>
+			</button>
 			<button type="button" class="ah-pdf-modal__btn ah-pdf-modal__btn--icon" id="ahPdfPrev" aria-label="{translate|escape key="plugins.themes.audhighasu.pdf.prev"}">
 				<span aria-hidden="true">‹</span>
 			</button>

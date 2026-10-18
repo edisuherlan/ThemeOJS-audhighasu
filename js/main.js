@@ -381,12 +381,17 @@
 
 		var pageFlip = null;
 		var objectUrls = [];
+		var lastImages = null;
+		var viewMode = 'single'; // single = readable; spread = 2-page magazine
+		var zoomLevel = 1;
+		var savedPage = 0;
 		var loading = document.getElementById('ahPdfLoading');
 		var errorEl = document.getElementById('ahPdfError');
 		var titleEl = document.getElementById('ahPdfModalTitle');
 		var pager = document.getElementById('ahPdfPager');
 		var download = document.getElementById('ahPdfDownload');
 		var errorLink = document.getElementById('ahPdfErrorLink');
+		var viewModeLabel = document.getElementById('ahPdfViewModeLabel');
 		var lastFocus = null;
 		var loadToken = 0;
 
@@ -430,14 +435,37 @@
 			return book;
 		}
 
-		function destroyFlip() {
+		function destroyFlip(keepImages) {
 			if (pageFlip) {
+				try { savedPage = pageFlip.getCurrentPageIndex(); } catch (e) { /* ignore */ }
 				try { pageFlip.destroy(); } catch (e) { /* ignore */ }
 				pageFlip = null;
 			}
 			var wrap = modal.querySelector('.ah-pdf-modal__book-wrap');
 			if (wrap) wrap.innerHTML = '';
-			revokeUrls();
+			if (!keepImages) {
+				revokeUrls();
+				lastImages = null;
+				savedPage = 0;
+				zoomLevel = 1;
+				viewMode = 'single';
+				syncViewModeLabel();
+			}
+		}
+
+		function syncStageScroll() {
+			var stage = modal.querySelector('.ah-pdf-modal__stage');
+			if (!stage) return;
+			requestAnimationFrame(function () {
+				stage.scrollTop = 0;
+				stage.scrollLeft = Math.max(0, (stage.scrollWidth - stage.clientWidth) / 2);
+			});
+		}
+
+		function syncViewModeLabel() {
+			if (viewModeLabel) {
+				viewModeLabel.textContent = viewMode === 'spread' ? '2 hlm' : '1 hlm';
+			}
 		}
 
 		function setPager(current, total) {
@@ -482,20 +510,50 @@
 
 		function getBookSize() {
 			var stage = modal.querySelector('.ah-pdf-modal__stage');
-			var w = stage ? stage.clientWidth : window.innerWidth;
-			var h = stage ? stage.clientHeight : window.innerHeight;
+			var pad = 12;
+			var w = Math.max(200, (stage ? stage.clientWidth : window.innerWidth) - pad);
+			var h = Math.max(280, (stage ? stage.clientHeight : window.innerHeight) - pad);
 			var isMobile = window.innerWidth < 768;
-			var pageW = isMobile ? Math.min(360, w - 24) : Math.min(520, Math.floor((w - 48) / 2));
-			var pageH = Math.round(pageW * 1.414);
-			if (pageH > h - 20) {
-				pageH = h - 20;
+			var mode = isMobile ? 'single' : viewMode;
+			var pageW;
+			var pageH;
+
+			if (mode === 'spread') {
+				pageW = Math.min(440, Math.floor(w / 2));
+				pageH = Math.round(pageW * 1.414);
+				if (pageH > h) {
+					pageH = h;
+					pageW = Math.round(pageH / 1.414);
+				}
+				if (pageW * 2 > w) {
+					pageW = Math.floor(w / 2);
+					pageH = Math.min(h, Math.round(pageW * 1.414));
+				}
+			} else {
+				// One large page — fill stage height for readable article text
+				pageH = h;
 				pageW = Math.round(pageH / 1.414);
+				if (pageW > w) {
+					pageW = w;
+					pageH = Math.round(pageW * 1.414);
+					if (pageH > h) {
+						pageH = h;
+						pageW = Math.round(pageH / 1.414);
+					}
+				}
 			}
-			return { width: Math.max(240, pageW), height: Math.max(340, pageH), isMobile: isMobile };
+
+			pageW = Math.max(180, Math.round(pageW * zoomLevel));
+			pageH = Math.max(260, Math.round(pageH * zoomLevel));
+			return { width: pageW, height: pageH, isMobile: isMobile, mode: mode };
 		}
 
 		function renderPdfPages(pdf) {
-			var scale = window.innerWidth < 768 ? 1.25 : 1.6;
+			// High DPI so text stays sharp when fitted to the modal
+			var dpr = window.devicePixelRatio || 1;
+			var scale = window.innerWidth < 768
+				? Math.min(2.2, 1.6 * dpr)
+				: Math.min(2.8, 2.0 * dpr);
 			var maxPages = Math.min(pdf.numPages, 60);
 			var tasks = [];
 
@@ -516,18 +574,18 @@
 								.then(function () {
 									return new Promise(function (resolve) {
 										if (!canvas.toBlob) {
-											resolve(canvas.toDataURL('image/jpeg', 0.92));
+											resolve(canvas.toDataURL('image/jpeg', 0.94));
 											return;
 										}
 										canvas.toBlob(function (blob) {
 											if (!blob) {
-												resolve(canvas.toDataURL('image/jpeg', 0.92));
+												resolve(canvas.toDataURL('image/jpeg', 0.94));
 												return;
 											}
 											var url = URL.createObjectURL(blob);
 											objectUrls.push(url);
 											resolve(url);
-										}, 'image/jpeg', 0.92);
+										}, 'image/jpeg', 0.94);
 									});
 								});
 						})
@@ -542,66 +600,65 @@
 			var book = ensureBookEl();
 			if (!book) throw new Error('no book container');
 
+			lastImages = images;
 			var size = getBookSize();
-			var single = images.length < 2;
+			var useSingle = size.mode === 'single' || images.length < 2;
+			var startAt = Math.max(0, Math.min(savedPage, images.length - 1));
 
 			if (pageFlip) {
+				try { savedPage = pageFlip.getCurrentPageIndex(); } catch (e) { /* ignore */ }
 				try { pageFlip.destroy(); } catch (e) { /* ignore */ }
 				pageFlip = null;
 				book = ensureBookEl();
+				startAt = Math.max(0, Math.min(savedPage, images.length - 1));
 			}
 
 			book.innerHTML = '';
-
-			if (single) {
-				size.width = Math.min(size.isMobile ? 360 : 480, Math.round(size.width * 1.35));
-				size.height = Math.round(size.width * 1.414);
-				var stage = modal.querySelector('.ah-pdf-modal__stage');
-				if (stage && size.height > stage.clientHeight - 24) {
-					size.height = Math.max(300, stage.clientHeight - 24);
-					size.width = Math.round(size.height / 1.414);
-				}
-				book.style.width = size.width + 'px';
-				book.style.maxWidth = '100%';
-			} else {
-				book.style.width = '';
-				book.style.maxWidth = '';
-			}
+			book.style.width = size.width + 'px';
+			book.style.maxWidth = 'none';
 
 			pageFlip = new St.PageFlip(book, {
 				width: size.width,
 				height: size.height,
-				size: single ? 'fixed' : 'stretch',
-				minWidth: 220,
-				maxWidth: single ? size.width : (size.isMobile ? 640 : 1100),
-				minHeight: 300,
-				maxHeight: 1400,
+				size: 'fixed',
+				minWidth: size.width,
+				maxWidth: size.width,
+				minHeight: size.height,
+				maxHeight: size.height,
 				drawShadow: true,
 				flippingTime: 900,
-				usePortrait: true,
-				startPage: 0,
-				autoSize: !single,
+				usePortrait: useSingle,
+				startPage: startAt,
+				autoSize: false,
 				maxShadowOpacity: 0.45,
 				showCover: false,
 				mobileScrollSupport: true,
 				swipeDistance: 25,
 				clickEventForward: true,
 				useMouseEvents: true,
-				showPageCorners: !single,
+				showPageCorners: !useSingle,
 				disableFlipByClick: false
 			});
 
 			pageFlip.loadFromImages(images);
 			pageFlip.on('flip', function (e) {
+				savedPage = e.data;
 				setPager(e.data, pageFlip.getPageCount());
 			});
-			setPager(0, pageFlip.getPageCount());
+			setPager(startAt, pageFlip.getPageCount());
+			syncViewModeLabel();
+			syncStageScroll();
 			if (loading) loading.setAttribute('hidden', 'hidden');
+		}
+
+		function remountKeepImages() {
+			if (!lastImages || !lastImages.length) return;
+			mountFlipbook(lastImages);
 		}
 
 		function loadFlipbook(downloadUrl) {
 			var token = ++loadToken;
-			destroyFlip();
+			destroyFlip(false);
 			ensureBookEl();
 			if (loading) loading.removeAttribute('hidden');
 			if (errorEl) errorEl.setAttribute('hidden', 'hidden');
@@ -660,6 +717,9 @@
 
 		var prevBtn = document.getElementById('ahPdfPrev');
 		var nextBtn = document.getElementById('ahPdfNext');
+		var zoomInBtn = document.getElementById('ahPdfZoomIn');
+		var zoomOutBtn = document.getElementById('ahPdfZoomOut');
+		var viewModeBtn = document.getElementById('ahPdfViewMode');
 		if (prevBtn) {
 			prevBtn.addEventListener('click', function () {
 				if (pageFlip) pageFlip.flipPrev();
@@ -668,6 +728,28 @@
 		if (nextBtn) {
 			nextBtn.addEventListener('click', function () {
 				if (pageFlip) pageFlip.flipNext();
+			});
+		}
+		if (zoomInBtn) {
+			zoomInBtn.addEventListener('click', function () {
+				if (zoomLevel >= 3) return;
+				zoomLevel = Math.round((zoomLevel + 0.25) * 100) / 100;
+				remountKeepImages();
+			});
+		}
+		if (zoomOutBtn) {
+			zoomOutBtn.addEventListener('click', function () {
+				if (zoomLevel <= 0.7) return;
+				zoomLevel = Math.round((zoomLevel - 0.25) * 100) / 100;
+				remountKeepImages();
+			});
+		}
+		if (viewModeBtn) {
+			viewModeBtn.addEventListener('click', function () {
+				viewMode = viewMode === 'single' ? 'spread' : 'single';
+				zoomLevel = 1;
+				syncViewModeLabel();
+				remountKeepImages();
 			});
 		}
 

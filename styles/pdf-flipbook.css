@@ -17,7 +17,7 @@ body.ah-pdf-open {
 	display: flex !important;
 	align-items: center;
 	justify-content: center;
-	padding: 0.85rem;
+	padding: 0.35rem;
 	box-sizing: border-box;
 }
 
@@ -37,8 +37,8 @@ body.ah-pdf-open {
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
-	width: min(1120px, 100%);
-	height: min(92vh, 900px);
+	width: min(96vw, 1480px);
+	height: min(96vh, 100%);
 	border-radius: 10px;
 	overflow: hidden;
 	background:
@@ -178,10 +178,11 @@ body.ah-pdf-open {
 	position: relative;
 	flex: 1 1 auto;
 	min-height: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0.85rem;
+	display: block;
+	padding: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	overscroll-behavior: contain;
 	background:
 		radial-gradient(ellipse at center, rgba(255, 247, 237, 0.08), transparent 58%),
 		linear-gradient(180deg, rgba(255, 237, 213, 0.06), rgba(28, 25, 23, 0.35));
@@ -218,11 +219,16 @@ body.ah-pdf-open {
 .ah-pdf-modal__book-wrap {
 	position: relative;
 	z-index: 1;
-	width: 100%;
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	box-sizing: border-box;
+	min-width: 100%;
+	min-height: 100%;
+	width: max-content;
+	height: max-content;
+	margin: 0 auto;
+	padding: 0.75rem;
 	perspective: 1800px;
 }
 
@@ -244,19 +250,21 @@ body.ah-pdf-open {
 }
 
 .ah-pdf-modal__book .stf__item {
+	overflow: hidden !important;
 	background: #ffffff;
 	background-size: contain !important;
 	background-repeat: no-repeat !important;
-	background-position: center top !important;
+	background-position: center center !important;
 }
 
 .ah-pdf-modal__book .stf__item img,
 .ah-pdf-modal__book img {
 	display: block;
-	width: 100%;
-	height: auto;
+	width: 100% !important;
+	height: 100% !important;
 	max-height: 100%;
-	object-fit: contain;
+	object-fit: contain !important;
+	object-position: center center !important;
 	background: #fff;
 }
 

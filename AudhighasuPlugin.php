@@ -143,7 +143,7 @@ class AudhighasuPlugin extends \PKP\plugins\ThemePlugin
 
         [$page] = $this->getRequestedPageOp();
         if ($page === 'article' || $page === 'issue') {
-            $this->addStyle('audhighasu-pdf', 'styles/pdf-flipbook.css?v=20261018r');
+            $this->addStyle('audhighasu-pdf', 'styles/pdf-flipbook.css?v=20261018uz');
             $this->addScript(
                 'pdfjs',
                 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
@@ -165,7 +165,7 @@ class AudhighasuPlugin extends \PKP\plugins\ThemePlugin
         }
 
         $this->addStyle('audhighasu', 'styles/main.css?v=20261018z');
-        $this->addScript('audhighasu', 'js/main.js?v=20261018z');
+        $this->addScript('audhighasu', 'js/main.js?v=20261018abz');
         $this->addMenuArea(['primary', 'user']);
     }
 
