@@ -1,0 +1,262 @@
+# Audhighasu — tema research-folio gratis (edisi oranye)
+# Author  : Edi Suherlan | audhighasu.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Audhighasu Theme\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "plugins.themes.audhighasu.name"
+msgstr "Audhighasu"
+
+msgid "plugins.themes.audhighasu.description"
+msgstr "Tema OJS research-folio oranye gratis untuk peneliti — masthead ilmiah, baris sitasi, dan meja riset profesional. Edisi promosi dari Audhighasu."
+
+msgid "plugins.themes.audhighasu.option.primaryColour.label"
+msgstr "Oranye"
+
+msgid "plugins.themes.audhighasu.option.primaryColour.description"
+msgstr "Warna oranye dominan untuk strip imprint, tombol, garis, dan aksen utama."
+
+msgid "plugins.themes.audhighasu.option.accentColour.label"
+msgstr "Aksen tinta"
+
+msgid "plugins.themes.audhighasu.option.accentColour.description"
+msgstr "Aksen gelap untuk tombol sekunder dan permukaan kontras tinggi."
+
+msgid "plugins.themes.audhighasu.option.showDescription.option"
+msgstr "Tampilkan deskripsi jurnal di beranda"
+
+msgid "plugins.themes.audhighasu.imprint.openAccess"
+msgstr "Akses Terbuka"
+
+msgid "plugins.themes.audhighasu.imprint.folio"
+msgstr "Research Folio"
+
+msgid "plugins.themes.audhighasu.imprint.promo"
+msgstr "Edisi gratis Audhighasu"
+
+msgid "plugins.themes.audhighasu.masthead.submit"
+msgstr "Kirim naskah"
+
+msgid "plugins.themes.audhighasu.masthead.search"
+msgstr "Cari korpus"
+
+msgid "plugins.themes.audhighasu.masthead.searchPlaceholder"
+msgstr "Cari artikel, penulis, kata kunci…"
+
+msgid "plugins.themes.audhighasu.home.kicker"
+msgstr "Penelitian terkini"
+
+msgid "plugins.themes.audhighasu.home.title"
+msgstr "Riset yang layak disitasi"
+
+msgid "plugins.themes.audhighasu.home.lead"
+msgstr "Jelajahi penelitian terulas sejawat dalam tata letak folio sitasi untuk akademisi."
+
+msgid "plugins.themes.audhighasu.home.listKicker"
+msgstr "Catatan terbaru"
+
+msgid "plugins.themes.audhighasu.home.listTitle"
+msgstr "Kontribusi terbaru"
+
+msgid "plugins.themes.audhighasu.home.read"
+msgstr "Baca artikel"
+
+msgid "plugins.themes.audhighasu.desk.title"
+msgstr "Meja riset"
+
+msgid "plugins.themes.audhighasu.desk.hint"
+msgstr "Terbitan terkini dan metrik korpus dalam satu pandang."
+
+msgid "plugins.themes.audhighasu.desk.current"
+msgstr "Terbitan terkini"
+
+msgid "plugins.themes.audhighasu.desk.metrics"
+msgstr "Metrik korpus"
+
+msgid "plugins.themes.audhighasu.desk.viewIssue"
+msgstr "Buka terbitan"
+
+msgid "plugins.themes.audhighasu.desk.archive"
+msgstr "Arsip terbitan"
+
+msgid "plugins.themes.audhighasu.stats.articles"
+msgstr "Artikel"
+
+msgid "plugins.themes.audhighasu.stats.issues"
+msgstr "Terbitan"
+
+msgid "plugins.themes.audhighasu.stats.authors"
+msgstr "Penulis"
+
+msgid "plugins.themes.audhighasu.cta.title"
+msgstr "Berkontribusi pada catatan ilmiah"
+
+msgid "plugins.themes.audhighasu.cta.text"
+msgstr "Kirim penelitian asli, ulasan, dan catatan. Tema gratis Audhighasu ini menjaga fokus pada kejelasan dan kredibilitas."
+
+msgid "plugins.themes.audhighasu.footer.explore"
+msgstr "Jelajahi"
+
+msgid "plugins.themes.audhighasu.footer.developedBy"
+msgstr "Tema oleh"
+
+msgid "plugins.themes.audhighasu.about.kicker"
+msgstr "Profil jurnal"
+
+msgid "plugins.themes.audhighasu.about.lead"
+msgstr "Misi, lingkup, dan standar editorial research folio ini."
+
+msgid "plugins.themes.audhighasu.contact.kicker"
+msgstr "Kantor editorial"
+
+msgid "plugins.themes.audhighasu.contact.lead"
+msgstr "Hubungi tim editorial dan dukungan jurnal ini."
+
+msgid "plugins.themes.audhighasu.privacy.kicker"
+msgstr "Data & kepercayaan"
+
+msgid "plugins.themes.audhighasu.privacy.lead"
+msgstr "Bagaimana data pribadi dikumpulkan, disimpan, dan dilindungi."
+
+msgid "plugins.themes.audhighasu.submissions.kicker"
+msgstr "Panduan penulis"
+
+msgid "plugins.themes.audhighasu.submissions.lead"
+msgstr "Siapkan naskah Anda untuk peer review dengan daftar periksa berikut."
+
+msgid "plugins.themes.audhighasu.archive.kicker"
+msgstr "Arsip korpus"
+
+msgid "plugins.themes.audhighasu.archive.lead"
+msgstr "Jelajahi terbitan yang sudah dipublikasikan secara kronologis terbalik."
+
+msgid "plugins.themes.audhighasu.issue.kicker"
+msgstr "Folio terbitan"
+
+msgid "plugins.themes.audhighasu.issue.sectionDefault"
+msgstr "Artikel"
+
+msgid "plugins.themes.audhighasu.article.kicker"
+msgstr "Folio artikel"
+
+msgid "plugins.themes.audhighasu.article.statsHint"
+msgstr "Unduhan bulanan selama 12 bulan terakhir"
+
+msgid "plugins.themes.audhighasu.stats.infographic"
+msgstr "Metrik korpus"
+
+msgid "plugins.themes.audhighasu.stats.engagement"
+msgstr "Engagement artikel"
+
+msgid "plugins.themes.audhighasu.stats.hint"
+msgstr "Tayangan abstrak dan unduhan berkas untuk folio riset ini."
+
+msgid "plugins.themes.audhighasu.stats.views"
+msgstr "Tayangan"
+
+msgid "plugins.themes.audhighasu.stats.abstractViews"
+msgstr "Tayangan halaman abstrak"
+
+msgid "plugins.themes.audhighasu.stats.downloads"
+msgstr "Unduhan"
+
+msgid "plugins.themes.audhighasu.stats.fileDownloads"
+msgstr "PDF dan galley lain"
+
+msgid "plugins.themes.audhighasu.stats.total"
+msgstr "Total"
+
+msgid "plugins.themes.audhighasu.stats.interactions"
+msgstr "Tayangan + unduhan"
+
+msgid "plugins.themes.audhighasu.stats.trendKicker"
+msgstr "Tren 12 bulan"
+
+msgid "plugins.themes.audhighasu.stats.trend"
+msgstr "Tayangan & unduhan"
+
+msgid "plugins.themes.audhighasu.stats.mixKicker"
+msgstr "Proporsi engagement"
+
+msgid "plugins.themes.audhighasu.stats.mix"
+msgstr "Tayangan vs unduhan"
+
+msgid "plugins.themes.audhighasu.stats.otherFiles"
+msgstr "Lainnya"
+
+msgid "plugins.themes.audhighasu.pdf.reader"
+msgstr "Pembaca Research Folio"
+
+msgid "plugins.themes.audhighasu.pdf.loading"
+msgstr "Membuka halaman…"
+
+msgid "plugins.themes.audhighasu.pdf.error"
+msgstr "PDF tidak dapat dibuka di flipbook. Anda masih dapat mengunduh berkasnya."
+
+msgid "plugins.themes.audhighasu.pdf.prev"
+msgstr "Halaman sebelumnya"
+
+msgid "plugins.themes.audhighasu.pdf.next"
+msgstr "Halaman berikutnya"
+
+msgid "plugins.themes.audhighasu.search.kicker"
+msgstr "Pencarian korpus"
+
+msgid "plugins.themes.audhighasu.search.lead"
+msgstr "Temukan artikel terulas sejawat berdasarkan kata kunci, penulis, atau tanggal."
+
+msgid "plugins.themes.audhighasu.search.placeholder"
+msgstr "Cari korpus penelitian…"
+
+msgid "plugins.themes.audhighasu.search.authorPlaceholder"
+msgstr "Nama penulis…"
+
+msgid "plugins.themes.audhighasu.search.idle"
+msgstr "Masukkan kata kunci di atas untuk mulai mencari."
+
+msgid "plugins.themes.audhighasu.search.found"
+msgstr "{$resultCount} hasil"
+
+msgid "plugins.themes.audhighasu.mastheadPage.kicker"
+msgstr "Dewan editorial"
+
+msgid "plugins.themes.audhighasu.mastheadPage.lead"
+msgstr "Editor, editor bagian, dan reviewer yang melayani jurnal ini."
+
+msgid "plugins.themes.audhighasu.login.kicker"
+msgstr "Meja penulis"
+
+msgid "plugins.themes.audhighasu.login.lead"
+msgstr "Masuk untuk mengelola pengajuan, ulasan, dan korespondensi editorial."
+
+msgid "plugins.themes.audhighasu.login.usernamePlaceholder"
+msgstr "Nama pengguna atau email"
+
+msgid "plugins.themes.audhighasu.login.passwordPlaceholder"
+msgstr "Kata sandi"
+
+msgid "plugins.themes.audhighasu.login.showPassword"
+msgstr "Tampilkan kata sandi"
+
+msgid "plugins.themes.audhighasu.login.hidePassword"
+msgstr "Sembunyikan kata sandi"
+
+msgid "plugins.themes.audhighasu.register.kicker"
+msgstr "Bergabung dengan jurnal"
+
+msgid "plugins.themes.audhighasu.register.lead"
+msgstr "Buat akun untuk mengirim naskah dan berpartisipasi dalam peer review."
+
+msgid "plugins.themes.audhighasu.lostPassword.kicker"
+msgstr "Pemulihan akun"
+
+msgid "plugins.themes.audhighasu.lostPassword.lead"
+msgstr "Masukkan email yang terdaftar di jurnal ini. Kami akan mengirim instruksi reset."
+
+msgid "plugins.themes.audhighasu.lostPassword.emailPlaceholder"
+msgstr "Alamat email terdaftar"

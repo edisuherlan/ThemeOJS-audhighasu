@@ -1,0 +1,262 @@
+# Audhighasu — free research-folio theme (orange edition)
+# Author  : Edi Suherlan | audhighasu.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Audhighasu Theme\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "plugins.themes.audhighasu.name"
+msgstr "Audhighasu"
+
+msgid "plugins.themes.audhighasu.description"
+msgstr "A free orange research-folio OJS theme for scholars — scholarly masthead, citation rows, and a professional research desk. Distributed by Audhighasu as a promotional edition."
+
+msgid "plugins.themes.audhighasu.option.primaryColour.label"
+msgstr "Orange"
+
+msgid "plugins.themes.audhighasu.option.primaryColour.description"
+msgstr "Dominant scholarly orange for the imprint strip, buttons, rules, and key accents."
+
+msgid "plugins.themes.audhighasu.option.accentColour.label"
+msgstr "Ink accent"
+
+msgid "plugins.themes.audhighasu.option.accentColour.description"
+msgstr "Dark accent used for secondary buttons and high-contrast text surfaces."
+
+msgid "plugins.themes.audhighasu.option.showDescription.option"
+msgstr "Show the journal description on the homepage"
+
+msgid "plugins.themes.audhighasu.imprint.openAccess"
+msgstr "Open Access"
+
+msgid "plugins.themes.audhighasu.imprint.folio"
+msgstr "Research Folio"
+
+msgid "plugins.themes.audhighasu.imprint.promo"
+msgstr "Free edition by Audhighasu"
+
+msgid "plugins.themes.audhighasu.masthead.submit"
+msgstr "Submit manuscript"
+
+msgid "plugins.themes.audhighasu.masthead.search"
+msgstr "Search the corpus"
+
+msgid "plugins.themes.audhighasu.masthead.searchPlaceholder"
+msgstr "Search articles, authors, keywords…"
+
+msgid "plugins.themes.audhighasu.home.kicker"
+msgstr "Current scholarship"
+
+msgid "plugins.themes.audhighasu.home.title"
+msgstr "Research that earns its citations"
+
+msgid "plugins.themes.audhighasu.home.lead"
+msgstr "Browse peer-reviewed research in a citation-first folio layout designed for working academics."
+
+msgid "plugins.themes.audhighasu.home.listKicker"
+msgstr "Latest record"
+
+msgid "plugins.themes.audhighasu.home.listTitle"
+msgstr "Recent contributions"
+
+msgid "plugins.themes.audhighasu.home.read"
+msgstr "Read article"
+
+msgid "plugins.themes.audhighasu.desk.title"
+msgstr "Research desk"
+
+msgid "plugins.themes.audhighasu.desk.hint"
+msgstr "Current issue and corpus metrics at a glance."
+
+msgid "plugins.themes.audhighasu.desk.current"
+msgstr "Current issue"
+
+msgid "plugins.themes.audhighasu.desk.metrics"
+msgstr "Corpus metrics"
+
+msgid "plugins.themes.audhighasu.desk.viewIssue"
+msgstr "Open issue"
+
+msgid "plugins.themes.audhighasu.desk.archive"
+msgstr "Issue archive"
+
+msgid "plugins.themes.audhighasu.stats.articles"
+msgstr "Articles"
+
+msgid "plugins.themes.audhighasu.stats.issues"
+msgstr "Issues"
+
+msgid "plugins.themes.audhighasu.stats.authors"
+msgstr "Authors"
+
+msgid "plugins.themes.audhighasu.cta.title"
+msgstr "Contribute to the scholarly record"
+
+msgid "plugins.themes.audhighasu.cta.text"
+msgstr "Submit original research, reviews, and notes. This free Audhighasu theme keeps the focus on clarity and credibility."
+
+msgid "plugins.themes.audhighasu.footer.explore"
+msgstr "Explore"
+
+msgid "plugins.themes.audhighasu.footer.developedBy"
+msgstr "Theme by"
+
+msgid "plugins.themes.audhighasu.about.kicker"
+msgstr "Journal profile"
+
+msgid "plugins.themes.audhighasu.about.lead"
+msgstr "Mission, scope, and editorial standards for this research folio."
+
+msgid "plugins.themes.audhighasu.contact.kicker"
+msgstr "Editorial office"
+
+msgid "plugins.themes.audhighasu.contact.lead"
+msgstr "Reach the editorial and support teams for this journal."
+
+msgid "plugins.themes.audhighasu.privacy.kicker"
+msgstr "Data & trust"
+
+msgid "plugins.themes.audhighasu.privacy.lead"
+msgstr "How personal data is collected, stored, and protected."
+
+msgid "plugins.themes.audhighasu.submissions.kicker"
+msgstr "Author guidelines"
+
+msgid "plugins.themes.audhighasu.submissions.lead"
+msgstr "Prepare your manuscript for peer review with the checklist below."
+
+msgid "plugins.themes.audhighasu.archive.kicker"
+msgstr "Corpus archive"
+
+msgid "plugins.themes.audhighasu.archive.lead"
+msgstr "Browse published issues in reverse chronological order."
+
+msgid "plugins.themes.audhighasu.issue.kicker"
+msgstr "Issue folio"
+
+msgid "plugins.themes.audhighasu.issue.sectionDefault"
+msgstr "Articles"
+
+msgid "plugins.themes.audhighasu.article.kicker"
+msgstr "Article folio"
+
+msgid "plugins.themes.audhighasu.article.statsHint"
+msgstr "Monthly downloads over the last 12 months"
+
+msgid "plugins.themes.audhighasu.stats.infographic"
+msgstr "Corpus metrics"
+
+msgid "plugins.themes.audhighasu.stats.engagement"
+msgstr "Article engagement"
+
+msgid "plugins.themes.audhighasu.stats.hint"
+msgstr "Abstract views and file downloads for this research folio."
+
+msgid "plugins.themes.audhighasu.stats.views"
+msgstr "Views"
+
+msgid "plugins.themes.audhighasu.stats.abstractViews"
+msgstr "Abstract page views"
+
+msgid "plugins.themes.audhighasu.stats.downloads"
+msgstr "Downloads"
+
+msgid "plugins.themes.audhighasu.stats.fileDownloads"
+msgstr "PDF and other galleys"
+
+msgid "plugins.themes.audhighasu.stats.total"
+msgstr "Total"
+
+msgid "plugins.themes.audhighasu.stats.interactions"
+msgstr "Views + downloads"
+
+msgid "plugins.themes.audhighasu.stats.trendKicker"
+msgstr "12-month trend"
+
+msgid "plugins.themes.audhighasu.stats.trend"
+msgstr "Views & downloads"
+
+msgid "plugins.themes.audhighasu.stats.mixKicker"
+msgstr "Engagement share"
+
+msgid "plugins.themes.audhighasu.stats.mix"
+msgstr "Views vs downloads"
+
+msgid "plugins.themes.audhighasu.stats.otherFiles"
+msgstr "Other"
+
+msgid "plugins.themes.audhighasu.pdf.reader"
+msgstr "Research Folio reader"
+
+msgid "plugins.themes.audhighasu.pdf.loading"
+msgstr "Opening pages…"
+
+msgid "plugins.themes.audhighasu.pdf.error"
+msgstr "Unable to open the PDF in the flipbook. You can still download the file."
+
+msgid "plugins.themes.audhighasu.pdf.prev"
+msgstr "Previous page"
+
+msgid "plugins.themes.audhighasu.pdf.next"
+msgstr "Next page"
+
+msgid "plugins.themes.audhighasu.search.kicker"
+msgstr "Corpus search"
+
+msgid "plugins.themes.audhighasu.search.lead"
+msgstr "Find peer-reviewed articles by keyword, author, or date."
+
+msgid "plugins.themes.audhighasu.search.placeholder"
+msgstr "Search the research corpus…"
+
+msgid "plugins.themes.audhighasu.search.authorPlaceholder"
+msgstr "Author name…"
+
+msgid "plugins.themes.audhighasu.search.idle"
+msgstr "Enter a keyword above to begin searching the corpus."
+
+msgid "plugins.themes.audhighasu.search.found"
+msgstr "{$resultCount} results"
+
+msgid "plugins.themes.audhighasu.mastheadPage.kicker"
+msgstr "Editorial board"
+
+msgid "plugins.themes.audhighasu.mastheadPage.lead"
+msgstr "Editors, section editors, and reviewers serving this journal."
+
+msgid "plugins.themes.audhighasu.login.kicker"
+msgstr "Author desk"
+
+msgid "plugins.themes.audhighasu.login.lead"
+msgstr "Sign in to manage submissions, reviews, and editorial correspondence."
+
+msgid "plugins.themes.audhighasu.login.usernamePlaceholder"
+msgstr "Username or email"
+
+msgid "plugins.themes.audhighasu.login.passwordPlaceholder"
+msgstr "Password"
+
+msgid "plugins.themes.audhighasu.login.showPassword"
+msgstr "Show password"
+
+msgid "plugins.themes.audhighasu.login.hidePassword"
+msgstr "Hide password"
+
+msgid "plugins.themes.audhighasu.register.kicker"
+msgstr "Join the journal"
+
+msgid "plugins.themes.audhighasu.register.lead"
+msgstr "Create an account to submit manuscripts and participate in peer review."
+
+msgid "plugins.themes.audhighasu.lostPassword.kicker"
+msgstr "Account recovery"
+
+msgid "plugins.themes.audhighasu.lostPassword.lead"
+msgstr "Enter the email address registered with this journal. We will send reset instructions."
+
+msgid "plugins.themes.audhighasu.lostPassword.emailPlaceholder"
+msgstr "Registered email address"
